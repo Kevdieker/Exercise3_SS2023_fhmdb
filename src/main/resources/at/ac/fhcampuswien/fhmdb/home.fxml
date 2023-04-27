@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="790.0" prefWidth="1215.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.ac.fhcampuswien.fhmdb.HomeController">
+   <top>
+      <HBox prefHeight="91.0" prefWidth="1215.0" style="-fx-background-color: LIGHTGREY;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="77.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/movie_campus.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="8.0" top="8.0" />
+               </HBox.margin>
+            </ImageView>
+            <Label alignment="CENTER" prefHeight="82.0" prefWidth="267.0" text="Movie Campus">
+               <font>
+                  <Font name="Berlin Sans FB" size="25.0" />
+               </font>
+               <padding>
+                  <Insets top="8.0" />
+               </padding>
+            </Label>
+            <Separator maxHeight="-Infinity" orientation="VERTICAL" prefHeight="86.0" prefWidth="14.0" />
+            <HBox prefHeight="91.0" prefWidth="280.0">
+               <children>
+                  <ImageView fitHeight="43.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Bild_2023-03-06_163437466-removebg-preview.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <ComboBox fx:id="genreBox" nodeOrientation="RIGHT_TO_LEFT" onAction="#OnActionFilterMovies" prefHeight="34.0" prefWidth="120.0" promptText="GENRE">
+                     <padding>
+                        <Insets top="4.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets top="4.0" />
+                     </HBox.margin>
+                  </ComboBox>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="25.0" top="29.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="91.0" prefWidth="220.0">
+               <children>
+                  <ComboBox fx:id="ratingBox" nodeOrientation="RIGHT_TO_LEFT" onAction="#OnActionFilterMoviesAfterRating" prefHeight="34.0" prefWidth="120.0" promptText="RATING">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </ComboBox>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="10.0" top="33.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="91.0" prefWidth="220.0">
+               <children>
+                  <ComboBox fx:id="yearBox" nodeOrientation="RIGHT_TO_LEFT" onAction="#OnActionFilterMoviesAfterYear" prefHeight="34.0" prefWidth="120.0" promptText="RELEASE YEAR" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="10.0" top="33.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="91.0" prefWidth="228.0">
+               <children>
+                  <ImageView fitHeight="28.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/sorticon.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="5.0" top="3.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <ComboBox fx:id="sortBox" nodeOrientation="RIGHT_TO_LEFT" onAction="#OnActiveSortMovies" prefHeight="34.0" prefWidth="137.0" promptText="Sort" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="45.0" top="33.0" />
+               </padding>
+            </HBox>
+            <HBox maxHeight="-Infinity" prefHeight="70.0" prefWidth="338.0">
+               <children>
+                  <TextField fx:id="searchField" onAction="#OnActiveSearchMovies" prefHeight="36.0" prefWidth="236.0" promptText="SEARCH MOVIE ">
+                     <opaqueInsets>
+                        <Insets top="60.0" />
+                     </opaqueInsets>
+                     <font>
+                        <Font name="Lucida Sans Unicode" size="12.0" />
+                     </font>
+                  </TextField>
+                  <ImageView fitHeight="40.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/lupe.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <padding>
+                  <Insets left="20.0" top="33.0" />
+               </padding>
+            </HBox>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <ScrollPane hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <content>
+            <VBox fx:id="home" prefHeight="850.0" prefWidth="1214.0" spacing="20.0" />
+         </content>
+      </ScrollPane>
+   </center>
+</BorderPane>
