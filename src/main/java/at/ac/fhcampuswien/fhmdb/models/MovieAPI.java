@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-
 public class MovieAPI{
 
     private static String urlBuilder(String query, Genre genre, String releaseYear, String ratingFrom) {
