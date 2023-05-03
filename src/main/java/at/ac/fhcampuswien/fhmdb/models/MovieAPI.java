@@ -2,6 +2,7 @@ package at.ac.fhcampuswien.fhmdb.models;
 
 import at.ac.fhcampuswien.fhmdb.Genre;
 import at.ac.fhcampuswien.fhmdb.Movie;
+import at.ac.fhcampuswien.fhmdb.MovieApiException;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -36,10 +37,11 @@ public class MovieAPI{
 
     }
 
-    public static List<Movie> getAllMovies(){
+    public static List<Movie> getAllMovies() throws MovieApiException {
         return getAllMovies(null,null,null,null);
     }
-    public static List<Movie> getAllMovies(String query, Genre genre, String releaseYear, String ratingFrom){
+
+    public static List<Movie> getAllMovies(String query, Genre genre, String releaseYear, String ratingFrom) throws MovieApiException {
         String url = urlBuilder(query, genre, releaseYear, ratingFrom);
 
         OkHttpClient client = new OkHttpClient();
@@ -57,9 +59,10 @@ public class MovieAPI{
         return new ArrayList<>();
     }
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
        System.out.println(getAllMovies());
     }
+     */
 
 
 

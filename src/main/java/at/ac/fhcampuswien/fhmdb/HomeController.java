@@ -30,7 +30,16 @@ public class HomeController implements Initializable {
     @FXML
     private TextField searchField;
     //private List<Movie> allMovies = new ArrayList<>(Movie.initializeMovies());
-    private List<Movie> allMovies = new ArrayList<>(MovieAPI.getAllMovies());
+    private List<Movie> allMovies;
+
+    {
+        try {
+            allMovies = new ArrayList<>(MovieAPI.getAllMovies());
+        } catch (MovieApiException e) {
+            new MovieApiException("The are no movies available");
+        }
+    }
+
     private List<Movie> searchedMovies = allMovies;
     private List<Movie> filteredMoviesAfterGenre = allMovies;
     private List<Movie> filteredMoviesAfterRating = allMovies;
