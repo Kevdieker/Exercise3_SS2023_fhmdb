@@ -17,13 +17,17 @@ public class Database {
 
     private static ConnectionSource connectionSource;
 
-    Dao<WatchListEntity, Long> dao;
+    private Dao<WatchListEntity, Long> dao;
 
     private static Database instance;
 
-    public void testDB() throws SQLException {
+    /*public void testDB() throws SQLException {
         WatchListEntity watchList = new WatchListEntity("The thing", "That film is so cool", Genre.ACTION,1999,"img",159,5.0);
         dao.create(watchList);
+    } */
+
+    public Dao<WatchListEntity, Long> getDao() {
+        return dao;
     }
 
     private Database(){

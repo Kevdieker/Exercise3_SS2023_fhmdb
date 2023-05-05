@@ -19,11 +19,12 @@ public class Home extends Application {
         stage.setResizable(false);
         stage.show();
 
-        try {
+        /*try {
             Database.getDatabase().testDB();
         } catch (SQLException e) {
             e.printStackTrace();
-        }
+        }*/
+
     }
     public static void main(String[] args) {
         launch();

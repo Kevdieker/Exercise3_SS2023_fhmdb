@@ -42,4 +42,32 @@ public class WatchListEntity {
         this.lengthInMinutes = lengthInMinutes;
         this.rating = rating;
     }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public Genre getGenres() {
+        return genres;
+    }
+
+    public int getReleaseYear() {
+        return releaseYear;
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public int getLengthInMinutes() {
+        return lengthInMinutes;
+    }
+
+    public double getRating() {
+        return rating;
+    }
 }

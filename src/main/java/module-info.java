@@ -7,7 +7,6 @@ module at.ac.fhcampuswien.fhmdb{
     requires java.sql;
 
     opens at.ac.fhcampuswien.fhmdb to javafx.fxml,com.google.gson;
-    opens at.ac.fhcampuswien.fhmdb.database to ormlite.jdbc;
 
     exports at.ac.fhcampuswien.fhmdb;
     exports at.ac.fhcampuswien.fhmdb.exception;
@@ -15,4 +14,5 @@ module at.ac.fhcampuswien.fhmdb{
     exports at.ac.fhcampuswien.fhmdb.controller;
     opens at.ac.fhcampuswien.fhmdb.controller to com.google.gson, javafx.fxml;
     exports at.ac.fhcampuswien.fhmdb.database;
+    opens at.ac.fhcampuswien.fhmdb.database to com.google.gson, javafx.fxml, ormlite.jdbc;
 }
