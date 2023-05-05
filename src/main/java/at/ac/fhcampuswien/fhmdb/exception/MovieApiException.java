@@ -1,13 +1,10 @@
-package at.ac.fhcampuswien.fhmdb;
+package at.ac.fhcampuswien.fhmdb.exception;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
 public class MovieApiException extends Exception {
-    @FXML
-    Label exceptionMessage;
     public MovieApiException(String message) {
         super(message);
-        exceptionMessage.isVisible();
     }
 }

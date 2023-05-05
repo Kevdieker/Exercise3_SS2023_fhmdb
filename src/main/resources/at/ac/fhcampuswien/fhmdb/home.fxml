@@ -34,7 +34,7 @@
                </padding>
             </Label>
             <Separator maxHeight="-Infinity" orientation="VERTICAL" prefHeight="86.0" prefWidth="14.0" />
-            <HBox prefHeight="91.0" prefWidth="280.0">
+            <HBox prefHeight="91.0" prefWidth="226.0">
                <children>
                   <ImageView fitHeight="43.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -44,7 +44,7 @@
                         <Insets right="5.0" />
                      </HBox.margin>
                   </ImageView>
-                  <ComboBox fx:id="genreBox" nodeOrientation="RIGHT_TO_LEFT" onAction="#OnActionFilterMovies" prefHeight="34.0" prefWidth="120.0" promptText="GENRE">
+                  <ComboBox fx:id="genreBox" nodeOrientation="RIGHT_TO_LEFT" onAction="#OnActionFilterMovies" prefHeight="34.0" prefWidth="80.0" promptText="GENRE">
                      <padding>
                         <Insets top="4.0" />
                      </padding>
@@ -60,9 +60,9 @@
                   <Insets left="25.0" top="29.0" />
                </padding>
             </HBox>
-            <HBox prefHeight="91.0" prefWidth="220.0">
+            <HBox prefHeight="91.0" prefWidth="154.0">
                <children>
-                  <ComboBox fx:id="ratingBox" nodeOrientation="RIGHT_TO_LEFT" onAction="#OnActionFilterMoviesAfterRating" prefHeight="34.0" prefWidth="120.0" promptText="RATING">
+                  <ComboBox fx:id="ratingBox" nodeOrientation="RIGHT_TO_LEFT" onAction="#OnActionFilterMoviesAfterRating" prefHeight="34.0" prefWidth="90.0" promptText="RATING">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
@@ -75,9 +75,9 @@
                   <Insets left="10.0" top="33.0" />
                </padding>
             </HBox>
-            <HBox prefHeight="91.0" prefWidth="220.0">
+            <HBox prefHeight="91.0" prefWidth="173.0">
                <children>
-                  <ComboBox fx:id="yearBox" nodeOrientation="RIGHT_TO_LEFT" onAction="#OnActionFilterMoviesAfterYear" prefHeight="34.0" prefWidth="120.0" promptText="RELEASE YEAR" />
+                  <ComboBox fx:id="yearBox" nodeOrientation="RIGHT_TO_LEFT" onAction="#OnActionFilterMoviesAfterYear" prefHeight="34.0" prefWidth="121.0" promptText="RELEASE YEAR" />
                </children>
                <opaqueInsets>
                   <Insets />
@@ -86,7 +86,7 @@
                   <Insets left="10.0" top="33.0" />
                </padding>
             </HBox>
-            <HBox prefHeight="91.0" prefWidth="228.0">
+            <HBox prefHeight="91.0" prefWidth="265.0">
                <children>
                   <ImageView fitHeight="28.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -105,9 +105,9 @@
                   <Insets left="45.0" top="33.0" />
                </padding>
             </HBox>
-            <HBox maxHeight="-Infinity" prefHeight="70.0" prefWidth="338.0">
+            <HBox maxHeight="-Infinity" prefHeight="73.0" prefWidth="230.0">
                <children>
-                  <TextField fx:id="searchField" onAction="#OnActiveSearchMovies" prefHeight="36.0" prefWidth="236.0" promptText="SEARCH MOVIE ">
+                  <TextField fx:id="searchField" onAction="#OnActiveSearchMovies" prefHeight="36.0" prefWidth="183.0" promptText="SEARCH MOVIE ">
                      <opaqueInsets>
                         <Insets top="60.0" />
                      </opaqueInsets>
@@ -131,10 +131,7 @@
    <center>
       <ScrollPane hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <content>
-            <VBox fx:id="home" prefHeight="850.0" prefWidth="1214.0" spacing="20.0">
-               <children>
-                  <Label fx:id="exceptionMessage" alignment="CENTER" contentDisplay="CENTER" text="There are no movies !" textAlignment="CENTER" />
-               </children></VBox>
+            <VBox fx:id="home" prefHeight="850.0" prefWidth="1214.0" spacing="20.0" />
          </content>
       </ScrollPane>
    </center>

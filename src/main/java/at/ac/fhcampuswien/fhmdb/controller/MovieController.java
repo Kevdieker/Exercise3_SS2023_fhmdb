@@ -1,5 +1,8 @@
-package at.ac.fhcampuswien.fhmdb;
+package at.ac.fhcampuswien.fhmdb.controller;
+import at.ac.fhcampuswien.fhmdb.Movie;
+import at.ac.fhcampuswien.fhmdb.exception.MovieApiException;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 
 public class MovieController {
@@ -13,6 +16,7 @@ public class MovieController {
     private Label rating;
     @FXML
     private Label title;
+
     public void setData(Movie movie) {
         title.setText(movie.getTitle());
         description.setText(movie.getDescription());

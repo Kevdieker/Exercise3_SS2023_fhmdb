@@ -2,12 +2,11 @@ package at.ac.fhcampuswien.fhmdb.models;
 
 import at.ac.fhcampuswien.fhmdb.Genre;
 import at.ac.fhcampuswien.fhmdb.Movie;
-import at.ac.fhcampuswien.fhmdb.MovieApiException;
-import com.google.gson.Gson;
+import at.ac.fhcampuswien.fhmdb.exception.MovieApiException;
 import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
 import okhttp3.*;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -37,11 +36,11 @@ public class MovieAPI{
 
     }
 
-    public static List<Movie> getAllMovies() throws MovieApiException {
+    public static List<Movie> getAllMovies() {
         return getAllMovies(null,null,null,null);
     }
 
-    public static List<Movie> getAllMovies(String query, Genre genre, String releaseYear, String ratingFrom) throws MovieApiException {
+    public static List<Movie> getAllMovies(String query, Genre genre, String releaseYear, String ratingFrom) {
         String url = urlBuilder(query, genre, releaseYear, ratingFrom);
 
         OkHttpClient client = new OkHttpClient();
@@ -53,8 +52,8 @@ public class MovieAPI{
             List<Movie> movies = Arrays.asList(new GsonBuilder().create().fromJson(response.body().string(), Movie[].class));
             return movies;
 
-        }catch(Exception e){
-            System.err.println(e.getMessage());
+        }catch(IOException e){
+           new RuntimeException(e);
         }
         return new ArrayList<>();
     }
@@ -62,8 +61,7 @@ public class MovieAPI{
     /*public static void main(String[] args) {
        System.out.println(getAllMovies());
     }
+
      */
-
-
 
 }

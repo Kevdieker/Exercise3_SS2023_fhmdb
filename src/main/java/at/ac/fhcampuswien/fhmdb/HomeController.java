@@ -1,12 +1,23 @@
 package at.ac.fhcampuswien.fhmdb;
 
+import at.ac.fhcampuswien.fhmdb.Genre;
+import at.ac.fhcampuswien.fhmdb.Movie;
+import at.ac.fhcampuswien.fhmdb.controller.MovieController;
+import at.ac.fhcampuswien.fhmdb.exception.MovieApiException;
 import at.ac.fhcampuswien.fhmdb.models.MovieAPI;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -29,16 +40,16 @@ public class HomeController implements Initializable {
     private ComboBox<String> sortBox;
     @FXML
     private TextField searchField;
+
+    @FXML
+    private Button wlButton;
     //private List<Movie> allMovies = new ArrayList<>(Movie.initializeMovies());
     private List<Movie> allMovies;
 
     {
-        try {
-            allMovies = new ArrayList<>(MovieAPI.getAllMovies());
-        } catch (MovieApiException e) {
-            new MovieApiException("The are no movies available");
-        }
+        allMovies = new ArrayList<>(MovieAPI.getAllMovies());
     }
+
 
     private List<Movie> searchedMovies = allMovies;
     private List<Movie> filteredMoviesAfterGenre = allMovies;
