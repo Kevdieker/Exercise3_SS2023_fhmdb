@@ -1,6 +1,6 @@
 package at.ac.fhcampuswien.fhmdb;
 
-public class MovieApiException extends  Exception {
+public class MovieApiException extends  Exception {             //MovieApiException
     private final int statusCode;
 
     public MovieApiException(String message, int statusCode) {

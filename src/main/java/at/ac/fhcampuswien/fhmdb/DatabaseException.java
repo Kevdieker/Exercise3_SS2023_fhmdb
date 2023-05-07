@@ -1,6 +1,6 @@
 package at.ac.fhcampuswien.fhmdb;
 
-public class DatabaseException extends Exception {
+public class DatabaseException extends Exception {              //DatabaseException
     private final String query;
 
     public DatabaseException(String message, String query) {
